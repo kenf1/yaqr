@@ -15,4 +15,5 @@ Cargo.lock
 
 #Misc
 .DS_Store
-/Tests
+# /tests/QrCodes/*
+/tests

@@ -1,0 +1,6 @@
+{
+    //disable rust-analyzer automatic download of dependencies at start
+    "rust-analyzer.files.excludeDirs": [
+        "."
+    ]
+}
