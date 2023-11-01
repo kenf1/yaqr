@@ -1,7 +1,26 @@
 [package]
 name = "yaqr"
-version = "0.1.0"
+description = "Yet Another QR Reader"
+authors = ["kenf1"]
+homepage = "https://github.com/kenf1/yaqr"
+repository = "https://github.com/kenf1/yaqr"
+license = "MIT"
 edition = "2021"
+
+version = "0.1.0"
+include = [
+    "src/func.rs",
+    "Cargo.toml",
+    "LICENSE"
+]
+
+[lib]
+name = "yaqr"
+path = "src/func.rs"
+
+[[bin]]
+name = "yaqr_bin"
+path = "src/main.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
