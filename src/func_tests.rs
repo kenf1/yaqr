@@ -55,3 +55,24 @@ fn from_url_fail(){
     let res = func::image_from_url("https://github.com/");
     res.unwrap();
 }
+
+//test save_img function
+#[test]
+fn save_img_pass(){
+    let img_url = "https://github.com/piderman314/bardecoder/blob/master/tests/images/needs_alignment.jpg?raw=true";
+    func::save_img(img_url,"./tests/QrCodes/Example.jpg",image::ImageFormat::Jpeg);
+}
+
+#[test]
+#[should_panic]
+fn save_img_fail(){
+    let img_url = "https://github.com/";
+    func::save_img(img_url,"./tests/QrCodes/Example.jpg",image::ImageFormat::Jpeg);
+}
+
+#[test]
+#[should_panic]
+fn save_img_fail1(){
+    let img_url = "https://github.com/piderman314/bardecoder/blob/master/tests/images/needs_alignment.jpg?raw=true";
+    func::save_img(img_url,"./tests",image::ImageFormat::Jpeg);
+}

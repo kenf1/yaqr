@@ -1,4 +1,4 @@
-use image::{self,DynamicImage,GenericImageView};
+use image::{self,DynamicImage,GenericImageView,ImageFormat};
 use reqwest::blocking::get;
 use image::imageops::CatmullRom; //resize algorithm
 use bardecoder;
@@ -70,4 +70,13 @@ pub fn from_remote(url: &str){
     let qrcode = image_from_url(url);
     let tidy = image_dimensions(qrcode.unwrap());
     image_decode(tidy);
+}
+
+//save image from url
+pub fn save_img(url: &str,path: &str,extension: ImageFormat){
+    let image = image_from_url(url);
+    image
+        .unwrap()
+        .save_with_format(path,extension)
+        .unwrap();
 }
